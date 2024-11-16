@@ -65,13 +65,19 @@ body{
     width: 120px;
 }
 
-#image{
+#game{
     background-color: gray;
     width: 600px;
     height: 300px;
     color: #f9faf8;
     text-align: center;
     align-content: center;
+}
+
+.buttonContainer{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
 }
 
 .info{

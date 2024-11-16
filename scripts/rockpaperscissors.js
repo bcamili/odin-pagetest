@@ -1,75 +1,84 @@
 let humanScore = 0;
 let compScore = 0;
 
+let reset = false;
+
+const buttonRock = document.querySelector("#rock");
+buttonRock.addEventListener("click", function (e) {playRound("Rock")});
+
+const buttonPaper = document.querySelector("#paper");
+buttonPaper.addEventListener("click", function (e) {playRound("Paper")});
+
+const buttonScissors = document.querySelector("#scissors");
+buttonScissors.addEventListener("click", function (e) {playRound("Scissors")});
+
 function getComputerChoice(){
-    const choices = ["rock", "paper", "scissors"];
+    const choices = ["Rock", "Paper", "Scissors"];
     return choices[Math.floor(Math.random()*3)];
 }
 
-function getHumanChoice(){
-    choice = String(prompt("What's your choice?")).toLowerCase();
-    if(choice == "rock" || choice == "paper" || choice == "scissors"){
-        return choice;
-    }else{
-        return "That's not a thing.";
+function playRound(human){
+    if(reset){
+        humanScore = 0;
+        compScore = 0;
+        reset = false;
     }
-}
+    const comp = getComputerChoice();
+    
+    let resultDiv = document.getElementById("result");
 
-function playRound(human, comp){
+    let resultMessage = "";
+
     if(human == comp){
-        console.log("We both chose " + human);
-        return
-    }
+        resultMessage = "We both chose " + human;
+      }else{
 
-    let round = [human, comp];
+        let round = [human, comp];
 
-    if(round.includes("rock") && round.includes("scissors")){
-        if(human == "rock"){
-            humanScore++;
-            console.log("You win!");
-        }else{
-            compScore++;
-            console.log("You lose!");
+        if(round.includes("Rock") && round.includes("Scissors")){
+            if(human == "Rock"){
+                humanScore++;
+                resultMessage = "You win!";
+            }else{
+                compScore++;
+                resultMessage = "You lose!";
+            }
+            resultMessage = resultMessage + "\nRock beats Scissors!";
         }
-        console.log("Rock beats Scissors!");
-    }
-    if(round.includes("paper") && round.includes("scissors")){
-        if(human == "scissors"){
-            humanScore++;
-            console.log("You win!");
-        }else{
-            compScore++;
-            console.log("You lose!");
+        if(round.includes("Paper") && round.includes("Scissors")){
+            if(human == "Scissors"){
+                humanScore++;
+                resultMessage = "You win!";
+            }else{
+                compScore++;
+                resultMessage = "You lose!";
+            }
+            resultMessage = resultMessage + "\nScissors beats Paper!";
         }
-        console.log("Scissors beats Paper!");
-    }
-    if(round.includes("paper") && round.includes("rock")){
-        if(human == "paper"){
-            humanScore++;
-            console.log("You win!");
-        }else{
-            compScore++;
-            console.log("You lose!");
+        if(round.includes("Paper") && round.includes("Rock")){
+            if(human == "Paper"){
+                humanScore++;
+                resultMessage = "You win!";
+            }else{
+                compScore++;
+                resultMessage = "You lose!";
+            }
+            resultMessage = resultMessage + "\nPaper beats Rock!";
         }
-        console.log("Paper beats Rock!");
     }
+    let humanScoreSpan = document.getElementById("humanScore");
+    humanScoreSpan.textContent = humanScore;
+    
+    let compScoreSpan = document.getElementById("compScore");
+    compScoreSpan.textContent = compScore;
+   
+    if(humanScore == 5){
+        resultMessage = "You win the Game!"
+        reset = true;
+    }
+    if(compScore == 5){
+        resultMessage = "You lose the Game!"
+        reset = true;
+    }
+    resultDiv.textContent =resultMessage;
 }
-
-function playGame(){
-    console.log("Let's play Rock Paper Scissors!");
-
-    for(let i = 0; i<5; i++){
-        playRound(getHumanChoice(), getComputerChoice());
-        console.log("Score: " + humanScore + ":" + compScore);
-    }
-
-    if(humanScore == compScore){
-        console.log("Welp, no winner, I guess...");
-    }else if(humanScore>compScore){
-        console.log("Congrats! You are the winner!");
-    }else{
-        console.log("Sorry, you are the loser.");
-    }
-}
-
-playGame();
