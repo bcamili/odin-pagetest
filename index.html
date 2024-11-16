@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Odin Page Test</title>
     <link rel="stylesheet" href="styles/style.css">
+    <script src="scripts/rockpaperscissors.js" defer></script>
 </head>
 <body>
 
@@ -33,8 +34,29 @@
                 <button>Sign up</button>
             </div>
         </div>
-        <div id="image">
-            This is a placeholder for an image
+        <div id="game">
+            <div class="gameContainer">
+                <div>
+                    <h1>Let's play Rock Paper Scissors!</h1>
+                </div>
+                <div class="buttonContainer">
+                    <div class="gameButtonContainer">
+                        <button id="rock">Rock</button>
+                    </div>
+                    <div class="gameButtonContainer">
+                        <button id="paper">Paper</button>
+                    </div>
+                    <div class="gameButtonContainer">
+                        <button id="scissors">Scissors</button>
+                    </div>
+                </div>
+                <div>
+                    <p>You: <span id="humanScore">0</span>     Me: <span id="compScore">0</span></p>
+                </div>
+                <div id="result">
+
+                </div>
+            </div>
         </div>
     </div>
 
