@@ -64,6 +64,24 @@ body{
     height: 40px;
     width: 120px;
 }
+.boxRow{
+    display: flex;
+    justify-content: center;
+    border: 12px solid #1f2937;
+}
+
+.sandbox{
+    border: 12px solid #1f2937;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex: 1;
+}
+
+.divider{
+    background-color: #1f2937;
+    width: 2%;
+}
 
 #game{
     background-color: gray;
@@ -78,6 +96,46 @@ body{
     display: flex;
     justify-content: center;
     gap: 10px;
+}
+
+.calcButton{
+    width: 60px;
+    height: 40px;
+    text-align: center;
+    align-content: center;
+    margin: 10px;
+    border: 1px solid black;
+    background: grey;
+}
+
+#button-0{
+    width: 142px;
+}
+
+#calculator{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}
+
+#calculatorDisplay{
+    background: rgb(230,230,230);
+    width: 90%;
+    height: 80px;
+    margin: 5%;
+    text-align: end;
+    align-content: center;
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 3%;
+    border: 1px solid black;
+}
+
+#numPad{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .info{
