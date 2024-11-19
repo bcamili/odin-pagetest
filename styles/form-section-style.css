@@ -23,7 +23,7 @@ body{
 
 #side{
     grid-area: side;
-    background-image: url("docs/assets/img/form-section-side-bg.jpg");
+    background-image: url("/docs/assets/img/form-section-side-bg.jpg");
     background-position: 50%;
 }
 
