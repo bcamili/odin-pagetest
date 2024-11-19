@@ -16,7 +16,7 @@ body{
 }
 
 .redBox{
-    border: 1px solid red;
+    border: 0px solid red;
 }
 
 #root_grid{
@@ -400,4 +400,31 @@ body{
 
 #trending-box{
     grid-area: trending-box;
+    padding: 10px;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+.trending-profile{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 1fr 2fr;
+    font-size: 0.9rem;
+    font-weight: 300;
+}
+
+.trending-profile span{
+    font-weight: 400;
+}
+.profile-pic-trending{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-pic-trending img{
+    width: 58%;
+    height: 80%;
+    border-radius: 100%;
 }
