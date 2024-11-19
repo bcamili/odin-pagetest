@@ -1,5 +1,11 @@
 html{
     height: 100%;
+    font-family: "Roboto";
+    /* #1992D4 */
+    --main-bg-color: #9c8062;
+    --main-head-color: #d5bd89;
+    --main-bg-color-hover: #1a87c2;
+
 }
 
 body{
@@ -25,7 +31,7 @@ body{
 
 #head{
     grid-area: head;
-    background-color: white;
+    background-color: var(--main-head-color);
     box-shadow: 0px -5px 6px 10px darkgrey;
 }
 
@@ -33,14 +39,10 @@ body{
     height: 100%;
     display: grid;
     grid-template-rows: 4fr 5fr;
-    grid-template-areas: "head-top" "head-bottom";
-}
-
-#head-top{
-    grid-area: head-top;
-    display: grid;
-    grid-template-columns: 5fr 2fr;
-    grid-template-areas: "search profile-and-alert";
+    grid-template-columns: 11fr 7fr;
+    grid-template-areas: 
+        "search profile-and-alert"
+        "userdata button-row";
 }
 
 #search{
@@ -73,15 +75,15 @@ body{
     border: none;
     border-radius: 20px;
     height: 40%;
-    width: 80%;
+    width: 95%;
 
 }
 
 #profile-and-alert{
     grid-area: profile-and-alert;
     display: grid;
-    grid-template-columns: 1fr 1fr 2fr;
-    grid-template-areas: "alert-icon profile-pic-small user-name-small";
+    grid-template-columns: 1fr 1fr 1fr 3fr;
+    grid-template-areas: ". alert-icon profile-pic-small user-name-small";
 }
 
 #alert-icon {
@@ -96,25 +98,122 @@ body{
 }
 
 #profile-pic-small{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     grid-area: profile-pic-small;
+
+}
+
+#profile-pic-small img{
+    border-radius: 100%;
+    width: 70%;
+}
+
+#profile-pic-large{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    grid-area: profile-pic-large;
+    padding-right: 5%;
+}
+
+#profile-pic-large img{
+    border-radius: 100%;
+    width: 50%;
 }
 
 #user-name-small{
     grid-area: user-name-small;
+    display: flex;
+    font-weight: bold;
+    font-size: 1.3rem;
+    align-items: center;
+    padding-left: 5%;
 }
 
-#head-bottom{
-    grid-area: head-bottom;
+#userdata{
+    grid-area: userdata;
+
     display: grid;
-    grid-template-columns: 5fr 2fr;
-    grid-template-areas: "search profile-and-alert";
+    grid-template-columns: 1fr 4fr;
+    grid-template-areas: "profile-pic-large user-name-large";
 }
+
+#profile-pic-large{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    grid-area: profile-pic-large;
+    padding-right: 15%;
+}
+
+#profile-pic-large img{
+    border-radius: 100%;
+    width: 60%;
+}
+
+#user-name-large{
+    grid-area: user-name-large;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+#user-name-large span{
+    font-size: 1.6rem;
+    font-weight: bold;
+    line-height: 150%;
+}
+
+#button-row{
+    grid-area: button-row;
+    padding-right: 5%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "new-button upload-button share-button";
+    justify-items: center;
+    align-items: center;
+}
+
+#new-button{
+    grid-area: new-button;
+}
+
+#upload-button{
+    grid-area: upload-button;
+}
+
+#share-button{
+    grid-area: share-button;
+}
+
+.blue-button{
+    height: 40px;
+    width: 110px;
+    border-radius: 20px;
+    background-color: var(--main-bg-color);
+    color: white;
+    font-size: 1.1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.blue-button:hover{
+    background-color: var(--main-bg-color-hover);
+}
+
+
+
 
 
 
 #sidebar{
     grid-area: sidebar;
-    background-color: #1992D4;
+    background-color: var(--main-bg-color);
 }
 
 #sidebar_grid{
@@ -139,9 +238,20 @@ body{
 
 #navigation{
     display: grid;
-    grid-template-columns: 1fr 3fr;
     grid-auto-rows: 50px;
     grid-template-rows: 50px;
+}
+
+.nav-row{
+    display: grid;
+    grid-template-columns: 1fr 3fr;    
+}
+
+.nav-row:hover{
+    border-radius: 20px;
+    background-color: var(--main-head-color);
+    padding: 0px 0px 0px 20px;
+    margin: 0px 20px 0px 20px;
 }
 
 .icon{
@@ -165,6 +275,129 @@ body{
     font-size: 1.4rem;
 }
 
+
+
+
+
+
 #main{
     grid-area: main;
+    padding: 0px 20px 60px 20px;
+    display: grid;
+    column-gap: 25px;
+    grid-template-columns: 5fr 2fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+        "projects announcements"
+        "projects trending";
+}
+
+.main-section-title{
+    display: flex;
+    align-items: end;
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+
+.main-section-box{
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 1px 3px 6px 0px darkgrey;
+}
+
+#projects{
+    grid-area: projects;
+    display: grid;
+    gap:10px;
+    grid-template-rows: 60px 1fr;
+    grid-template-areas: "projects-title" "projects-cards";
+}
+
+#projects-title{
+    grid-area: projects-title;
+}
+
+#projects-cards{
+    grid-area: projects-cards;
+    gap:30px;
+    height: 100%;
+    display: grid;
+    grid-template: 1fr 1fr 1fr/ 1fr 1fr;
+}
+
+.card{
+    border-left: 8px solid var(--main-bg-color-hover);
+    display: grid;
+    padding: 20px;
+    grid-template-rows: 4fr 1fr;
+}
+
+.card p{
+    font-size: 0.85rem;
+    font-weight: 300;
+}
+
+.card p span{
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+
+.card-buttons{
+    display: grid;
+    grid-template-columns: 50px 50px 50px;
+    justify-content: end;
+}
+
+.card-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-icon svg{
+    width: 25px;
+}
+
+#announcements{
+    grid-area: announcements;
+    display: grid;
+    gap:10px;
+    grid-template-rows: 60px 1fr;
+    grid-template-areas: "announcements-title" "announcements-box";
+}
+
+#announcements-title{
+    grid-area: announcements-title;
+}
+
+#announcements-box{
+    grid-area: announcements-box;
+    padding: 30px;
+    align-content: space-between;
+}
+
+#announcements-box p{
+    font-size: 0.8rem;
+    font-weight: 300;
+}
+
+#announcements-box p span{
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+#trending{
+    grid-area: trending;
+    display: grid;
+    gap:10px;
+    grid-template-rows: 60px 1fr;
+    grid-template-areas: "trending-title" "trending-box";
+}
+
+#trending-title{
+    grid-area: trending-title;
+}
+
+#trending-box{
+    grid-area: trending-box;
 }
