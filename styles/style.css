@@ -29,6 +29,14 @@ body{
     flex:1 1 auto;
 }
 
+#form-test{
+    width: min(calc(100vw - 48px),1440px);
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+}
+
+
 #logo{
     font-size: 24px;
     font-weight: bold;
@@ -68,20 +76,17 @@ body{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    background-color: #1f2937;
     border: 12px solid #1f2937;
 }
-
+ 
 .sandbox{
+    background-color: #1f2937;
     border: 12px solid #1f2937;
     justify-content: center;
     align-items: center;
     display: flex;
     flex: 1;
-}
-
-.divider{
-    background-color: #1f2937;
-    width: 2%;
 }
 
 #game{

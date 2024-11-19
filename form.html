@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Odin Page Test</title>
+
+        <link rel="stylesheet" href="styles/form-section-style.css">
+
+        <script src="scripts/form.js" defer></script>
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+        <div class="grid-container">
+            <div id="side">
+                <div id="logo-banner">
+                    <p>Benjamin Camili</p>
+                </div>
+            </div>
+            <div id="top">
+                <p>This is just some text I was told to add. This is not a message, I have <span> nothing </span>to say. <br><br>Enjoy <span>the form.</span></p>
+            </div>
+            <div id="middle">
+                <form id="form">
+                    <div id="form-container">
+                        <div id="form_header">
+                            Let's do this!
+                        </div>
+                        <div id="first_name_grid" class="form-element">
+                            <label for="first_name">FIRST NAME</label>
+                            <input type="text" id="first_name" name="first_name" minlength="3" maxlength="20">
+                        </div>
+                        <div id="last_name_grid" class="form-element">
+                            <label for="last_name">*LAST NAME</label>
+                            <input type="text" id="last_name" name="last_name" minlength="3" maxlength="20" required>
+                        </div>
+                        <div class="form-element" id="email_grid">
+                            <label for="email">*EMAIL</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-element" id="phone_grid">
+                            <label for="phone">PHONE NUMBER</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-element" id="password_grid">
+                            <label for="password">*PASSWORD</label>
+                            <input type="password" id="password" name="password" minlength="6" maxlength="20" required>
+                            <p id="error_message">*Passwords do not match</p>
+                        </div>
+                        <div class="form-element" id="confirmPW_grid">
+                            <label for="confirmPW">*CONFIRM PASSWORD</label>
+                            <input type="password" id="confirmPW" name="confirmPW" minlength="6" maxlength="20" required>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div id="bottom">
+                <button id="createAccountBtn" form="form">Create Account</button>
+                <p>Already have an account? <span>Log in</span></p>
+            </div>
+        </div>     
+    </body>
+</html>

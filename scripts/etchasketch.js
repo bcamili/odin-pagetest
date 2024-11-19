@@ -19,6 +19,7 @@ game.appendChild(gameBox);
 
 gameBox.style.width = "750px";
 gameBox.style.height = "750px";
+gameBox.style.backgroundColor = "white";
 gameBox.style.border = "12px solid black";
 gameBox.style.marginBottom = "10%";
 gameBox.style.display = "flex";
