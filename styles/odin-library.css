@@ -1,4 +1,89 @@
-.book{
+html{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 12px;
+    --sage: #DCE4C9;
+    --beige: #F5F5DC;
+    --brown: #B6A28E;
+    --orange: #E07B39;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--sage);
+    margin: 0;
+    padding: 10%;
+}
+
+.libContainer{
+    width: 100%;
+}
+
+.libTitle{
+    font-family: "Edu AU VIC WA NT Pre", cursive;
+    font-size: 3rem;
+}
+
+.bookshelf{
+    background-color: var(--brown);
+    padding: 5%;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
+    gap: 20px;
+}
+
+.book{
+    aspect-ratio: 2/3;
+    background-color: var(--beige);
+    display: grid;
+    grid-template-rows: 2fr 1fr 1fr;
+    border-radius: 5px;
+    border-left: 5px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 5px solid rgba(255, 255, 255, 0.8);
+
+}
+
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10%;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.author{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10%;
+}
+
+.bottomRow{
+    padding: 10%;
+    display:flex;
+    justify-content: space-around;
+    align-items: end;
+}
+
+.numPages{
+    font-size: 0.8rem;
+}
+
+.read{
+
+}
+
+.deleteButton{
+    width: 20px;
+    height: 20px;
+    background-color: #E07B39;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    font-weight: bold;
 }
