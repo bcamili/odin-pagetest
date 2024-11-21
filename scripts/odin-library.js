@@ -204,7 +204,7 @@ function openAddDialogue(e){
 }
 
 function submitBook(e){
-    addBookToLibrary(titleInput.value, authorInput.value, pagesInput.value, readInput.checked);
+    addBookToLibrary(authorInput.value, titleInput.value, pagesInput.value, readInput.checked);
     titleInput.value = "";
     authorInput.value = ""
     pagesInput.value = "1"
