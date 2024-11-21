@@ -4,20 +4,26 @@ html{
     --sage: #DCE4C9;
     --beige: #F5F5DC;
     --brown: #B6A28E;
+    --dark-brown: #75685c;
     --orange: #E07B39;
 }
 
 body{
     display: flex;
     justify-content: center;
-    align-items: center;
-    background-color: var(--sage);
+    background-color: var(--beige);
     margin: 0;
     padding: 10%;
+    padding-top: 5%;
 }
 
 .libContainer{
     width: 100%;
+}
+
+.header{
+    display:flex;
+    justify-content: space-between;
 }
 
 .libTitle{
@@ -25,12 +31,32 @@ body{
     font-size: 3rem;
 }
 
+.addButton{
+    background-color: var(--brown);
+    width: 50px;
+    height: 50px;
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--beige);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    z-index: 1;
+}
+
+.addButton:hover{
+    background-color: var(--dark-brown);
+}
+
 .bookshelf{
     background-color: var(--brown);
     padding: 5%;
     display: grid;
+    border: 3px solid var(--dark-brown);
     grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
     gap: 20px;
+    box-shadow: 3px 3px 10px 0px;
 }
 
 .book{
@@ -40,6 +66,8 @@ body{
     grid-template-rows: 2fr 1fr 1fr;
     border-radius: 5px;
     border-left: 5px solid rgba(0, 0, 0, 0.2);
+    border-right: 2px solid rgba(255, 255, 255, 0.5);
+    border-top: 2px solid rgba(255, 255, 255, 0.5);
     border-bottom: 5px solid rgba(255, 255, 255, 0.8);
 
 }
@@ -65,7 +93,7 @@ body{
 .bottomRow{
     padding: 10%;
     display:flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: end;
 }
 
@@ -74,7 +102,7 @@ body{
 }
 
 .read{
-
+    
 }
 
 .deleteButton{
@@ -85,5 +113,106 @@ body{
     justify-content: center;
     align-items: center;
     border-radius: 4px;
+    font-weight: bold;
+}
+
+.overlayContainer::before{
+    position: fixed;
+    width: 200%;
+    height: 200%;
+    content: "";
+    background-color: black;
+    opacity: 0.5;
+    z-index: -1;
+    top: calc(-50% + 200px);
+    left: calc(-50% + 200px);
+}
+
+.overlayContainer{
+    width: 400px;
+    height: 200px;
+    position: fixed;
+    top: calc(50% - 200px);
+    left: calc(50% - 200px);
+}
+
+.overlayBG{
+    background-color: var(--sage);
+    border-radius: 15px;
+    height: 100%;
+    box-shadow: 0px 0px 20px 0px black;
+}
+
+.addForm{
+    display: grid;
+    padding: 10%;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+        "title title"
+        "author author"
+        "pages read"
+        "button button";
+    gap: 10%;
+    justify-content: center;
+}
+
+#titleInputDiv{
+    grid-area: title;
+    display: flex;
+    justify-content: center;}
+
+#authorInputDiv{
+    display: flex;
+    justify-content: center;
+    grid-area: author;
+}
+
+#pagesInputDiv{
+    display: flex;
+    justify-content: center;
+    grid-area: pages;
+}
+
+#pagesInputDiv input{
+    width: 20%;
+}
+
+#pagesInputDiv div{
+    display: flex;
+    margin-left: 10px;
+    align-items: center;
+}
+
+#readInputDiv{
+    display: flex;
+    justify-content: center;
+    grid-area: read;
+}
+
+#readInputDiv div{
+    display: flex;
+    margin-left: 10px;
+    align-items: center;
+}
+
+#submitBtnDiv{
+    display: flex;
+    justify-content: center;
+    grid-area: button;
+}
+
+#submitBtn{
+    height: 30px;
+    color: var(--sage);
+    width: 100px;
+    background-color: var(--dark-brown);
+    border: 0px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 3px;
+    font-family: unset;
+    font-size: 1.2rem;
     font-weight: bold;
 }
