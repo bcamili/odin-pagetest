@@ -1,0 +1,9 @@
+html{
+    font-family: "Lacquer";
+    font-size: 12px;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-item
