@@ -6,4 +6,39 @@ html{
 body{
     display: flex;
     flex-direction: column;
-    align-item
+    align-items: center;
+    background-color: white;
+    background-image: url("/docs/assets/img/Paper001_1K-JPG_Color.jpg");
+}
+
+#board{
+    display: grid;
+    grid-template: 100px 100px 100px / 100px 100px 100px;
+    background-color: black;
+    gap: 3px;
+}
+
+#turn{
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+.cell{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 8rem;
+    background-color: white;
+    background-image: url("/docs/assets/img/Paper001_1K-JPG_Color.jpg");
+
+}
+
+.X{
+    color: rgb(56, 27, 27);
+}
+
+.O{
+    color: rgb(27, 27, 56);
+}
+
